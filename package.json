@@ -1,0 +1,24 @@
+{
+  "name": "learntrack",
+  "version": "1.0.0",
+  "description": "lms backend",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "lms",
+    "payment",
+    "gateway"
+  ],
+  "author": "RRPanda",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^17.0.1",
+    "express": "^5.1.0",
+    "mongoose": "^8.16.1",
+    "nodemon": "^3.1.10"
+  }
+}
