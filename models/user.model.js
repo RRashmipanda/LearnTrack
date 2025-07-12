@@ -100,7 +100,7 @@ userSchema.methods.getResetPasswordToken = function () {
   return resetToken;
 };
 
-// Virtual field for total enrolled courses
+// Virtual field for total enrolled courses (for calculate value, they are not exist in db)
 userSchema.virtual("totalEnrolledCourses").get(function () {
   return this.enrolledCourses?.length;
 });

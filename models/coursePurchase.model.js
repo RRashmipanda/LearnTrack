@@ -63,11 +63,11 @@ coursePurchaseSchema.index({user:1,course:1});
 coursePurchaseSchema.index({status:1});
 coursePurchaseSchema.index({createdAt:-1});
 
-// Virtual field to check if purchase is refundable (within 30 days)
+// Virtual field to check if purchase is refundable (within 7 days)
 coursePurchaseSchema.virtual('isRefundable').get(function(){
     if(this.status!=='completed')return false;
-    const thirtyDaysAgo=new Date(Date.now()-30*24*60*60*1000);
-    return this.createdAt>thirtyDaysAgo;
+    const sevenDaysAgo=new Date(Date.now()-7*24*60*60*1000);
+    return this.createdAt>sevenDaysAgo;
 });
 
 // Method to process refund
