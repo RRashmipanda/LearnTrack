@@ -8,6 +8,7 @@ const razorpay = new Razorpay({
   key_secret: process.env.RAZORPAY_KEY_SECRET,
 });
 
+
 export const createRazorpayOrder = async (req, res) => {
   try {
     const userId = req.id;
