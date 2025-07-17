@@ -38,6 +38,7 @@ export const isAuthenticated = catchAsync(async (req, res, next) => {
   }
 });
 
+
 // Middleware for role-based access control
 export const restrictTo = (...roles) => {
   return catchAsync(async (req, res, next) => {
@@ -51,6 +52,7 @@ export const restrictTo = (...roles) => {
     next();
   });
 };
+
 
 // Optional authentication middleware
 export const optionalAuth = catchAsync(async (req, res, next) => {
