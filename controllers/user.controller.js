@@ -181,6 +181,7 @@ export const forgotPassword = catchAsync(async (req, res) => {
   });
 });
 
+
 /**
  * Reset password
  * @route POST /api/v1/users/reset-password/:token
@@ -211,6 +212,7 @@ export const resetPassword = catchAsync(async (req, res) => {
   });
 });
 
+
 /**
  * Delete user account
  * @route DELETE /api/v1/users/account
@@ -222,6 +224,7 @@ export const deleteUserAccount = catchAsync(async (req, res) => {
   if (user.avatar && user.avatar !== "default-avatar.png") {
     await deleteMediaFromCloudinary(user.avatar);
   }
+
 
   // Delete user
   await User.findByIdAndDelete(req.id);
