@@ -32,6 +32,7 @@ export const createUserAccount = catchAsync(async (req, res) => {
   generateToken(res, user._id, "Account created successfully");
 });
 
+
 /**
  * Authenticate user and get token
  * @route POST /api/v1/users/signin
@@ -52,6 +53,7 @@ export const authenticateUser = catchAsync(async (req, res) => {
   generateToken(res, user._id, `Welcome back ${user.name}`);
 });
 
+
 /**
  * Sign out user and clear cookie
  * @route POST /api/v1/users/signout
@@ -63,6 +65,7 @@ export const signOutUser = catchAsync(async (_, res) => {
     message: "Signed out successfully",
   });
 });
+
 
 /**
  * Get current user profile
@@ -91,6 +94,7 @@ export const getCurrentUserProfile = catchAsync(async (req, res) => {
     },
   });
 });
+
 
 /**
  * Update user profile
@@ -128,6 +132,7 @@ export const updateUserProfile = catchAsync(async (req, res) => {
     data: updatedUser,
   });
 });
+
 
 /**
  * Change user password
