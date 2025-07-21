@@ -9,6 +9,7 @@ const razorpay = new Razorpay({
 });
 
 
+
 export const createRazorpayOrder = async (req, res) => {
   try {
     const userId = req.id;
@@ -60,6 +61,8 @@ export const createRazorpayOrder = async (req, res) => {
   }
 };
 
+
+
 export const verifyPayment = async (req, res) => {
   try {
     const { razorpay_order_id, razorpay_payment_id, razorpay_signature } =
@@ -80,7 +83,7 @@ export const verifyPayment = async (req, res) => {
 
     // Update purchase record
     const purchase = await CoursePurchase.findOne({
-      paymentId: razorpay_order_id,
+      paymentId:  razorpay_order_id,
     });
     if (!purchase) {
       return res.status(404).json({ message: "Purchase record not found" });
